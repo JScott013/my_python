@@ -22,15 +22,15 @@ def decide_winner(user_choice, computer_choice):
     print win_msg
   elif user_choice_index == 2 and computer_choice_index == 1:
     print win_msg
-  elif user_choice_index >2:
-    print "Invalid Choice!"
-    return
   else:
     print lose_msg
     
 def play_RPS():
   print "Rock, Paper, Scissors"
   user_choice = raw_input("Select R for rock, P for Paper, or S for scissors\n").upper()
+  if user_choice not in options:
+    print "Invalid Choice"
+    return
   sleep(1)
   #computer_choice = options [randint(0,2)]
   computer_choice =  options [randint(0, len(options)-1)]
